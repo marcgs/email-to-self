@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "serve": "func host start --cors *",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/cosmos": "^3.7.4",
+    "@types/node": "^14.0.23",
+    "@types/sparkpost": "^2.1.4",
+    "@types/uuid": "^8.0.0",
+    "sparkpost": "^2.1.4",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.2-beta2",
+    "typescript": "^3.3.3"
+  }
+}

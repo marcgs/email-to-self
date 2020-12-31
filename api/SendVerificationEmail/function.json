@@ -1,0 +1,15 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "CosmosDbConnection",
+      "databaseName": "EmailToSelf",
+      "collectionName": "ScheduledEmailRequests",
+      "createLeaseCollectionIfNotExists": "true"
+    }
+  ],
+  "scriptFile": "../dist/SendVerificationEmail/index.js"
+}
