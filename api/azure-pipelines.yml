@@ -69,7 +69,7 @@ stages:
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Build.ArtifactStagingDirectory)'
+        targetPath: '$(Build.ArtifactStagingDirectory)/ets-api-$(Build.BuildId).zip'
         artifact: 'ets-api-$(Build.BuildId).zip'
         publishLocation: 'pipeline'
 
