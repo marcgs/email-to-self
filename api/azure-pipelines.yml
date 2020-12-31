@@ -67,8 +67,11 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/ets-api-$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/ets-api-$(Build.BuildId).zip
-      artifact: drop
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+        artifact: 'ets-api-$(Build.BuildId).zip'
+        publishLocation: 'pipeline'
 
 - stage: Deploy
   displayName: Deploy stage
