@@ -5,7 +5,7 @@
 
 
 trigger:
-- master
+- main
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
@@ -32,10 +32,11 @@ stages:
           npm install
           npm run build
         displayName: 'npm install and build'
+        workingDirectory: web
 
       - task: ArchiveFiles@2
         inputs:
-          rootFolderOrFile: '$(Build.SourcesDirectory)/dist'
+          rootFolderOrFile: '$(Build.SourcesDirectory)/web/dist'
           includeRootFolder: true
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/ets-$(Build.BuildId).zip'
